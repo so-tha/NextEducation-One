@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400">
+
+    </canvas>
+    <script>
+        let tela = document.querySelector("canvas");
+        let pincel = tela.getContext("2d");
+        
+        //desenhando um retalangulo 
+        pincel.fillStyle = "Lightgrey" //escolhendo a cor        
+        pincel.fillRect(0,0 , 600, 400); //preenche um retagunlo
+
+        pincel.fillStyle = "green";
+        pincel.fillRect(0,0,200,400) //um retangulo verde
+
+        pincel.fillStyle = "red"; // um retangulo vermelho
+        pincel.fillRect(400,0,200,400);
+        //fazendo um triangulo        
+        pincel.fillStyle = "yellow"
+        pincel.beginPath();
+        pincel.moveTo(300, 200) //o movimento
+        pincel.lineTo(200, 400); //cria uma linha
+        pincel.lineTo(400, 400); //cria uma linha
+        pincel.fill()
+        //fazendo um circulo
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(300,200,50,0,2 * 3.14) //o arco do circulo
+        pincel.fill();
+
+
+    </script>
+</body>
+</html>

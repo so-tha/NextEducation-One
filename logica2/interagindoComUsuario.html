@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interagindo</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+    <script>
+        let tela = document.querySelector("canvas")
+        let pincel = tela.getContext("2d")
+
+        pincel.fillStyle = "Black";
+        pincel.fillRect(0,0,600,400);
+
+        function exibeCirculo(evento){
+            //pega as coordenadas exatas de onde o usuario clica
+            let x = evento.pageX - tela.offsetLeft;
+            let y = evento.pageY - tela.offsetTop;
+            //criando um alvo para quando o usuario clicar
+            pincel.fillStyle = "White";
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+
+            console.log(x + "," + y);
+        }
+
+        tela.onclick = exibeCirculo; //jogando a função dentro do onclick
+
+    </script>
+</body>
+</html>
